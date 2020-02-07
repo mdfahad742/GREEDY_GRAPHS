@@ -72,11 +72,7 @@ void union1(ll v,ll w){
         rk[rootW]++;
     }
 }
-void union1(int x,int y){
-    int p = find(x);
-    int q = find(y);
-    parent[p] = parent[q];
-}
+
 
 bool connected(ll v, ll w){
     return find(v)==find(w);
