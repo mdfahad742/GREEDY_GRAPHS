@@ -87,10 +87,10 @@ bool connected(ll v, ll w){
  
 int main() {
     IOS;
-    // #ifndef ONLINE_JUDGE
-    // freopen("input.txt","r",stdin);
-    // freopen("output.txt","w",stdout);
-    // #endif
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    #endif
     
     ll v,e;cin>>v>>e;
 
@@ -108,33 +108,26 @@ int main() {
         parent[i]=i;
         rk[i]=0;
     }
-    // for(auto lhs:s){
-    //     cout<<lhs.ss.ff<<" "<<lhs.ss.ss<<" "<<lhs.ff<<endl;
-    // }
-    // cout<<endl;
+    
 
     vector<pair<ll, pair<ll,ll> > > mst;
     ll ans=0;
-    //cout<<v<<endl;
+    
     while(!s.empty() && mst.size()<v-1){
         auto i=*(s.begin());
-        //cout<<i.ss.ff<<" "<<i.ss.ss<<" "<<i.ff<<endl;
+        
         auto j=s.begin();
         ll p,q,wt;
         p=i.ss.ff;q=i.ss.ss;wt=i.ff;
-        //cout<<"check "<<p<<" "<<q<<" "<<wt<<endl;
+        
         s.erase(j);
         
-        //cout<<"find "<<find(p)<<" "<<find(q)<<endl;
+       
         if(!connected(p,q)){
             mst.pb({p,{q,wt}});
             ans+=wt;
             union1(p,q);
-            // cout<<"find "<<find(0)<<" "<<find(1)<<endl;
-            // cout<<"find "<<find(0)<<" "<<find(2)<<endl;
-            // cout<<"find "<<find(1)<<" "<<find(2)<<endl;
-            // cout<<"find "<<find(0)<<" "<<find(3)<<endl;
-            // cout<<"find "<<find(1)<<" "<<find(3)<<endl;
+            
 
         }
     }
