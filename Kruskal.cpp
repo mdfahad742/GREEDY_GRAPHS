@@ -66,7 +66,7 @@ void union1(ll v,ll w){
     ll rootW=find(w);
     if(rootV==rootW)return;
     if(rk[rootV]>rk[rootW]){parent[rootW]=rootV;}
-    else if(rk[rootV]>rk[rootW]){parent[rootV]=rootW;}
+    else if(rk[rootV]<rk[rootW]){parent[rootV]=rootW;}
     else {
         parent[rootV]=rootW;
         rk[rootW]++;
